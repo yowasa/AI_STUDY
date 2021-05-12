@@ -1,20 +1,8 @@
+from scipy.special import perm, comb
 
 
-
-req=[
-    [1,1,2,3],
-    [2,3,4,5],
-    [4,5,6,7],
-    [7,8,9,1]
-]
-[1,2,4,7]
-[3,]
-
-[
-    [0]*4,
-    [0]*4,
-    [0]*4,
-    [0]*4,
-]
+def cal(cardNum, effectNum, dropCard):
+    return 1 - comb(effectNum, 0) * comb(cardNum - effectNum, dropCard) / comb(cardNum, dropCard)
 
 
+print(cal(40, 14, 5))
